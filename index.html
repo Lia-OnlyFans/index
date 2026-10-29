@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eliandra | Perfil</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap');
+
+  :root {
+    --bg: #fff5f7;
+    --card: #ffffff;
+    --text: #4a2c2a;
+    --muted: #b07a7a;
+    --accent: #e83e6e;
+    --accent-light: #ff9bb3;
+    --border: #f8d0d8;
+    --soft: #ffe4ea;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, #ff9bb3, #e83e6e);
+    padding: 50px 0 40px;
+    text-align: center;
+    color: white;
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  header .tagline {
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.95;
+  }
+
+  /* GALLERY */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+    margin: 40px 0;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(232, 62, 110, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 28px rgba(232, 62, 110, 0.2);
+  }
+
+  /* SECTIONS */
+  section {
+    margin-bottom: 50px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    margin-bottom: 22px;
+    color: var(--accent);
+    position: relative;
+    padding-bottom: 10px;
+  }
+
+  h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-light);
+    border-radius: 3px;
+  }
+
+  /* INFO GRID */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .info-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    box-shadow: 0 4px 12px rgba(232, 62, 110, 0.06);
+  }
+
+  .info-card .label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--muted);
+    margin-bottom: 5px;
+  }
+
+  .info-card .value {
+    font-size: 1.05rem;
+    font-weight: 500;
+  }
+
+  /* SPECIALTIES */
+  .specialties {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .tag {
+    background: var(--soft);
+    color: var(--accent);
+    border: 1px solid var(--border);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  /* PAYMENT */
+  .payment-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 6px 18px rgba(232, 62, 110, 0.08);
+  }
+
+  .payment-box p {
+    margin-bottom: 10px;
+  }
+
+  .pix-key {
+    background: var(--soft);
+    color: var(--accent);
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-family: monospace;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    margin: 14px 0;
+    word-break: break-all;
+    font-weight: 600;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border);
+    margin-top: 20px;
+  }
+
+  @media (max-width: 600px) {
+    header h1 { font-size: 2.3rem; }
+    .gallery img { height: 320px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Eliandra</h1>
+    <div class="tagline">Massagens & Experiências</div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- GALERIA - nomes exatos das fotos -->
+  <div class="gallery">
+    <img src="frente.JPG" alt="Eliandra">
+    <img src="seios.JPG" alt="Eliandra">
+    <img src="de quatro.JPG" alt="Eliandra">
+    <img src="rabo.JPG" alt="Eliandra">
+    <img src="anus.JPG" alt="Eliandra">
+    <img src="buceta.JPG" alt="Eliandra">
+    <img src="ppk.JPG" alt="Eliandra">
+    <img src="xoxota.JPG" alt="Eliandra">
+    <img src="de ladinho.JPG" alt="Eliandra">
+    <img src="de lado.JPG" alt="Eliandra">
+    <img src="pimenta.JPG" alt="Eliandra">
+    <img src="4 2.JPG" alt="Eliandra">
+  </div>
+
+  <!-- DADOS PRINCIPAIS -->
+  <section>
+    <h2>Perfil</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="label">Tipo</div>
+        <div class="value">Loira</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Altura</div>
+        <div class="value">1,63 m</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Peso</div>
+        <div class="value">54 kg</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Manequim</div>
+        <div class="value">38</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Cintura</div>
+        <div class="value">69 cm</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Quadril</div>
+        <div class="value">98 cm</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Pés</div>
+        <div class="value">34</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Signo</div>
+        <div class="value">Gêmeos</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Tatuagem</div>
+        <div class="value">Não</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Piercing</div>
+        <div class="value">Não</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Silicone</div>
+        <div class="value">Não</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Fumante</div>
+        <div class="value">Não</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESPECIALIDADES -->
+  <section>
+    <h2>Especialidades</h2>
+    <div class="specialties">
+      <span class="tag">Massagem Relaxante</span>
+      <span class="tag">Massagem Tradicional</span>
+    </div>
+  </section>
+
+  <!-- ATENDIMENTO -->
+  <section>
+    <h2>Atendimento</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="label">Atende</div>
+        <div class="value">Homens, Mulheres e Outros (a combinar)</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Locais</div>
+        <div class="value">Hotéis, Local Próprio, Motéis e Outros a combinar</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Horários</div>
+        <div class="value">A combinar</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Agendamento</div>
+        <div class="value">Com 1 a 2 horas de antecedência</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Viagens</div>
+        <div class="value">A combinar</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Condução própria</div>
+        <div class="value">Sim</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Cache / Duração</div>
+        <div class="value">A combinar</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Idiomas</div>
+        <div class="value">Português</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREFERÊNCIAS -->
+  <section>
+    <h2>Preferências</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="label">Pratos preferidos</div>
+        <div class="value">Churrasco, Camarão, Cozinha Goiana, Italiana</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Sobremesas</div>
+        <div class="value">Pudim de leite condensado, Ferrero Rocher</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Cores preferidas</div>
+        <div class="value">Preto e Branco</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGAMENTO -->
+  <section>
+    <h2>Pagamento</h2>
+    <div class="payment-box">
+      <p><strong>Formas aceitas:</strong> Pix • Dinheiro • Débito • Cartões</p>
+      <p><strong>Pix:</strong></p>
+      <div class="pix-key">18998146332</div>
+      <p>Eliandra Mayrer Bueno de Almeida<br>Banco Inter</p>
+      <p style="margin-top:18px; color:var(--muted); font-size:0.9rem;">
+        Não atende ligações restritas.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    Eliandra • Todos os direitos reservados
+  </div>
+</footer>
+
+</body>
+</html>
