@@ -12,7 +12,7 @@ Quadril
 98cm
 
 Possui Tatuagem
-Não
+Sim
 
 Fumante
 Não
@@ -25,10 +25,10 @@ Horários
 A combinar
 
 Condução Própria
-Sim
+Nao
 
 Cache/Duração
-A combinar
+300
 
 Pés
 34
