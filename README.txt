@@ -20,7 +20,7 @@ Não
 Prato Preferido
 Churrasco. Camarão. Cozinha Goiana. Cozinha Italian etc. Sobrenome: Pudim de leite condensado. Ferreiro Rocher etc
 
-C
+
 Horários
 A combinar
 
@@ -34,10 +34,10 @@ Pés
 34
 
 Usa Piercing
-Não
+Sim
 
 Signo
-Gêmeos
+Escorpiao
 
 Atende
 Homens, Mulheres, Outros a combinar
