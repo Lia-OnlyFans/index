@@ -10,8 +10,7 @@
   <meta property="og:title" content="Eliandra | Massagens">
   <meta property="og:description" content="Massagem relaxante e tradicional. Agende pelo WhatsApp.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="imagens/foto-01.jpg">
-
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -257,7 +256,7 @@
         </div>
       </div>
       <div class="hero-photo">
-        <img src="imagens/foto-01.jpg" alt="Eliandra" onerror="this.style.visibility='hidden'">
+        <img data-n="1" alt="Eliandra">
       </div>
     </div>
   </div>
@@ -267,18 +266,18 @@
     <div class="container">
       <h2>Fotos</h2>
       <div class="gallery" id="gallery">
-        <button type="button" aria-label="Ampliar foto 1"><img loading="lazy" src="imagens/foto-01.jpg" alt="Eliandra – foto 1" onerror="this.parentElement.style.display='none'"></button>
-        <button type="button" aria-label="Ampliar foto 2"><img loading="lazy" src="imagens/foto-02.jpg" alt="Eliandra – foto 2" onerror="this.parentElement.style.display='none'"></button>
-        <button type="button" aria-label="Ampliar foto 3"><img loading="lazy" src="imagens/foto-03.jpg" alt="Eliandra – foto 3" onerror="this.parentElement.style.display='none'"></button>
-        <button type="button" aria-label="Ampliar foto 4"><img loading="lazy" src="imagens/foto-04.jpg" alt="Eliandra – foto 4" onerror="this.parentElement.style.display='none'"></button>
-        <button type="button" aria-label="Ampliar foto 5"><img loading="lazy" src="imagens/foto-05.jpg" alt="Eliandra – foto 5" onerror="this.parentElement.style.display='none'"></button>
-        <button type="button" aria-label="Ampliar foto 6"><img loading="lazy" src="imagens/foto-06.jpg" alt="Eliandra – foto 6" onerror="this.parentElement.style.display='none'"></button>
-        <button type="button" aria-label="Ampliar foto 7"><img loading="lazy" src="imagens/foto-07.jpg" alt="Eliandra – foto 7" onerror="this.parentElement.style.display='none'"></button>
-        <button type="button" aria-label="Ampliar foto 8"><img loading="lazy" src="imagens/foto-08.jpg" alt="Eliandra – foto 8" onerror="this.parentElement.style.display='none'"></button>
-        <button type="button" aria-label="Ampliar foto 9"><img loading="lazy" src="imagens/foto-09.jpg" alt="Eliandra – foto 9" onerror="this.parentElement.style.display='none'"></button>
-        <button type="button" aria-label="Ampliar foto 10"><img loading="lazy" src="imagens/foto-10.jpg" alt="Eliandra – foto 10" onerror="this.parentElement.style.display='none'"></button>
-        <button type="button" aria-label="Ampliar foto 11"><img loading="lazy" src="imagens/foto-11.jpg" alt="Eliandra – foto 11" onerror="this.parentElement.style.display='none'"></button>
-        <button type="button" aria-label="Ampliar foto 12"><img loading="lazy" src="imagens/foto-12.jpg" alt="Eliandra – foto 12" onerror="this.parentElement.style.display='none'"></button>
+        <button type="button" aria-label="Ampliar foto 1"><img loading="lazy" data-n="1" alt="Eliandra – foto 1"></button>
+        <button type="button" aria-label="Ampliar foto 2"><img loading="lazy" data-n="2" alt="Eliandra – foto 2"></button>
+        <button type="button" aria-label="Ampliar foto 3"><img loading="lazy" data-n="3" alt="Eliandra – foto 3"></button>
+        <button type="button" aria-label="Ampliar foto 4"><img loading="lazy" data-n="4" alt="Eliandra – foto 4"></button>
+        <button type="button" aria-label="Ampliar foto 5"><img loading="lazy" data-n="5" alt="Eliandra – foto 5"></button>
+        <button type="button" aria-label="Ampliar foto 6"><img loading="lazy" data-n="6" alt="Eliandra – foto 6"></button>
+        <button type="button" aria-label="Ampliar foto 7"><img loading="lazy" data-n="7" alt="Eliandra – foto 7"></button>
+        <button type="button" aria-label="Ampliar foto 8"><img loading="lazy" data-n="8" alt="Eliandra – foto 8"></button>
+        <button type="button" aria-label="Ampliar foto 9"><img loading="lazy" data-n="9" alt="Eliandra – foto 9"></button>
+        <button type="button" aria-label="Ampliar foto 10"><img loading="lazy" data-n="10" alt="Eliandra – foto 10"></button>
+        <button type="button" aria-label="Ampliar foto 11"><img loading="lazy" data-n="11" alt="Eliandra – foto 11"></button>
+        <button type="button" aria-label="Ampliar foto 12"><img loading="lazy" data-n="12" alt="Eliandra – foto 12"></button>
       </div>
     </div>
   </section>
@@ -404,6 +403,35 @@
 </dialog>
 
 <script>
+  // Carregador de imagens: tenta vários nomes/pastas até achar o arquivo
+  const NOMES = ['frente','seios','dequatro','rabo','anus','buceta','ppk','xoxota','ladinho1','lado','pimenta','4'];
+  function candidatos(i) {
+    const n = NOMES[i - 1];
+    const f = String(i).padStart(2, '0');
+    return [
+      `imagens/foto-${f}.jpg`,
+      `${n}.jpg`, `${n}_1.jpg`,
+      `imagens/${n}.jpg`, `imagens/${n}_1.jpg`,
+      `${n}.jpeg`, `imagens/${n}.jpeg`,
+      `${n}.png`, `imagens/${n}.png`,
+      `${n}.JPG`, `imagens/${n}.JPG`
+    ];
+  }
+  document.querySelectorAll('img[data-n]').forEach(img => {
+    const lista = candidatos(parseInt(img.dataset.n, 10));
+    let k = 0;
+    const tentar = () => {
+      if (k >= lista.length) {
+        const alvo = img.closest('button') || img;
+        alvo.style.display = 'none';
+        return;
+      }
+      img.src = lista[k++];
+    };
+    img.addEventListener('error', tentar);
+    tentar();
+  });
+
   // Ano do rodapé
   document.getElementById('year').textContent = new Date().getFullYear();
 
