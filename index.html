@@ -252,7 +252,7 @@
         <div class="facts">
           <span class="chip">Massagem relaxante</span>
           <span class="chip">Massagem tradicional</span>
-          <span class="chip">Condução própria</span>
+          <span class="chip">1h30 por R$ 300</span>
         </div>
       </div>
       <div class="hero-photo">
@@ -296,7 +296,7 @@
         <div class="info-card"><div class="label">Pés</div><div class="value">34</div></div>
         <div class="info-card"><div class="label">Signo</div><div class="value">Gêmeos</div></div>
         <div class="info-card"><div class="label">Tatuagem</div><div class="value">Não</div></div>
-        <div class="info-card"><div class="label">Piercing</div><div class="value">Não</div></div>
+        <div class="info-card"><div class="label">Piercing</div><div class="value">Sim</div></div>
         <div class="info-card"><div class="label">Silicone</div><div class="value">Não</div></div>
         <div class="info-card"><div class="label">Fumante</div><div class="value">Não</div></div>
       </div>
@@ -330,8 +330,8 @@
         <div class="info-card"><div class="label">Horários</div><div class="value">A combinar</div></div>
         <div class="info-card"><div class="label">Agendamento</div><div class="value">Com 1 a 2 horas de antecedência</div></div>
         <div class="info-card"><div class="label">Viagens</div><div class="value">A combinar</div></div>
-        <div class="info-card"><div class="label">Condução própria</div><div class="value">Sim</div></div>
-        <div class="info-card"><div class="label">Cachê e duração</div><div class="value">A combinar</div></div>
+        <div class="info-card"><div class="label">Condução própria</div><div class="value">Não</div></div>
+        <div class="info-card"><div class="label">Cachê e duração</div><div class="value">1 hora e meia por R$ 300</div></div>
         <div class="info-card"><div class="label">Idiomas</div><div class="value">Português</div></div>
       </div>
     </div>
@@ -364,7 +364,7 @@
         <div>
           <h3>Chave Pix</h3>
           <div class="pix-row">
-            <span class="pix-key" id="pixKey">18998146332</span>
+            <span class="pix-key" aria-label="Chave Pix oculta">••••••••••</span>
             <button class="copy" id="copyPix" type="button">Copiar chave</button>
           </div>
           <p>Eliandra Mayrer Bueno de Almeida<br>Banco Inter</p>
@@ -435,21 +435,16 @@
   // Ano do rodapé
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Verificação de idade (lembra a resposta neste navegador)
+  // Verificação de idade: pergunta a cada vez que o site é aberto
   const gate = document.getElementById('ageGate');
-  let ok = false;
-  try { ok = localStorage.getItem('age18') === '1'; } catch (e) {}
-  if (!ok) gate.showModal();
+  gate.showModal();
   gate.addEventListener('cancel', e => e.preventDefault());
-  document.getElementById('ageYes').addEventListener('click', () => {
-    try { localStorage.setItem('age18', '1'); } catch (e) {}
-    gate.close();
-  });
+  document.getElementById('ageYes').addEventListener('click', () => gate.close());
 
   // Copiar chave Pix
   const copyBtn = document.getElementById('copyPix');
   copyBtn.addEventListener('click', async () => {
-    const key = document.getElementById('pixKey').textContent.trim();
+    const key = atob('MTg5OTgxNDYzMzI=');
     try {
       await navigator.clipboard.writeText(key);
       copyBtn.textContent = 'Chave copiada';
